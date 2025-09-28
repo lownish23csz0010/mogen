@@ -1,0 +1,2033 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-size:32px;
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		15px 15px 0 0px #fff, /* The fourth layer */
+		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		20px 20px 0 0px #fff, /* The fifth layer */
+		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		25px 25px 0 0px #fff, /* The fifth layer */
+		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<html>
+<head>
+	<title>MoGen Survey</title>
+	<meta property="og:image" content="Path to my teaser.png"/> 
+	<meta property="og:title" content="Creative and Descriptive Paper Title." />
+	<meta property="og:description" content="Paper description." />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src=""></script> 
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-75863369-6');
+	</script>
+</head>
+
+<body>
+	<br>
+	<center>
+		<span style="font-size:36px; font-weight:bold;">
+			A Survey of Body and Face Motion Animation: Datasets, Metrics and Generative Techniques
+		</span>
+		
+		<!-- Author List -->
+		<table align="center" width="850px" style="margin-top:20px;">
+			<tr>
+				<td align="center" width="200px">
+					<span style="font-size:22px;">
+						<a href="#">Lownish Rai Sookha<sup>1</sup></a>
+					</span>
+				</td>
+				<td align="center" width="200px">
+					<span style="font-size:22px;">
+						<a href="#">Nikhil Pakhale<sup>1</sup></a>
+					</span>
+				</td>
+				<td align="center" width="200px">
+					<span style="font-size:22px;">
+						<a href="#">M. A. Ganaie<sup>1</sup></a>
+					</span>
+				</td>
+				<td align="center" width="200px">
+					<span style="font-size:22px;">
+						<a href="#">Abhinav Dhall<sup>2</sup></a>
+					</span>
+				</td>
+			</tr>
+		</table>
+
+		<!-- Affiliations -->
+		<table align="center" width="850px" style="margin-top:15px;">
+			<tr>
+				<td align="center">
+					<span style="font-size:18px;">
+						<sup>1</sup> Indian Institute of Technology Ropar, India <br>
+						<sup>2</sup> Monash University, Australia
+					</span>
+				</td>
+			</tr>
+		</table>
+
+		<!-- Links -->
+		<table align="center" width="250px" style="margin-top:20px;">
+			<tr>
+				<td align="center" width="120px">
+					<span style="font-size:20px;">
+						<a href=''>[Paper]</a>
+					</span>
+				</td>
+			</tr>
+		</table>
+	</center>
+</body>
+</html>
+
+
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:800px" src="./resources/generic_pipeline.png"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>Overview of Motion Generation.</i>
+					</center>
+  	              </td>
+			</tr>
+		</table>
+	</center>
+
+	<hr>
+
+	<table align=center width=850px>
+		<center><h1>Abstract</h1></center>
+		<tr>
+			<td>
+				Human motion generation in dyadic conversations is vital for engaging Human-Computer Interaction (HCI). Advances in generative modeling and multi-modal learning have enabled reaction generation from signals such as speech, conversational context and visual cues. However, generating expressive and coherent facial and bodily dynamics remains challenging due to the interplay of verbal and non-verbal cues and individual personality traits. This survey reviews body and facial motion generation, covering core concepts, representations, generative approaches, datasets and evaluation metrics. We highlight future directions to enhance the realism, coherence and expressiveness of avatars in dyadic settings.
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<hr>
+	<center><h1>Datasets</h1></center>
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<center>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-fymr">Dataset Category</th>
+    <th class="tg-fymr">Dataset</th>
+    <th class="tg-7btt">Year</th>
+    <th class="tg-7btt">Region</th>
+    <th class="tg-7btt">Paper</th>
+    <th class="tg-7btt">Dataset</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-1wig" rowspan="7">Text-Conditioned Motion Datasets</td>
+    <td class="tg-0lax">MotionFix</td>
+    <td class="tg-baqh">2024</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh"><a href="https://doi.org/10.1145/3680528.3687559"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://motionfix.is.tue.mpg.de/"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25"></a>
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Motion-X</td>
+    <td class="tg-baqh">2023</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh"><a href="https://arxiv.org/abs/2307.00818"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://github.com/IDEA-Research/Motion-X"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25">
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">CelebV-Text</td>
+    <td class="tg-baqh">2023</td>
+    <td class="tg-baqh">Face</td>
+    <td class="tg-baqh"><a href="https://doi.org/10.1109/CVPR52729.2023.01422"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://github.com/celebv-text/CelebV-Text"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25">
+</td>
+  </tr>
+<tr>
+    <td class="tg-0lax">HumanML3D</td>
+    <td class="tg-baqh">2022</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh">
+        <a href="https://doi.org/10.1109/CVPR52729.2023.01422">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/celebv-text/CelebV-Text">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0lax">HUMANISE</td>
+    <td class="tg-baqh">2022</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh">
+        <a href="https://openreview.net/forum?id=bntkx18xEb4">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://silvester.wang/HUMANISE/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0lax">BABEL</td>
+    <td class="tg-baqh">2021</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh">
+        <a href="https://openaccess.thecvf.com/content/CVPR2021/html/Punnakkal_BABEL_Bodies_Action_and_Behavior_With_English_Labels_CVPR_2021_paper.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://babel.is.tue.mpg.de/data.html">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+<tr>
+    <td class="tg-0lax">KIT-ML</td>
+    <td class="tg-baqh">2016</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh">
+        <a href="https://doi.org/10.1089/big.2016.0028">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://motion-annotation.humanoids.kit.edu/dataset/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-fymr" rowspan="7">Audio-Conditioned Motion Datasets</td>
+<td class="tg-0pky">MOSA</td>
+<td class="tg-c3ow">2024</td>
+<td class="tg-c3ow">Body</td>
+<td class="tg-c3ow">
+    <a href="https://doi.org/10.1109/TASLP.2024.3407529">
+        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+    </a>
+</td>
+<td class="tg-0lax">
+    <a href="https://github.com/yufenhuang/MOSA-Music-mOtion-and-Semantic-Annotation-dataset">
+        <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+    </a>
+</td>
+  </tr>
+<tr>
+    <td class="tg-0pky">AIOZ-GDANCE</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2303.12337">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/aioz-ai/AIOZ-GDANCE">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">BEAT</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136670605.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://pantomatrix.github.io/BEAT/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">PhantomDance</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2103.10206">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/libuyu/PhantomDanceDataset">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">AIST++</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2101.08779">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://google.github.io/aistplusplus_dataset/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Trinity</td>
+    <td class="tg-c3ow">2020</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="http://trinityspeechgesture.scss.tcd.ie">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="http://trinityspeechgesture.scss.tcd.ie">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">AniDance</td>
+    <td class="tg-c3ow">2018</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://dl.acm.org/doi/10.1145/3240508.3241388">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/Music-to-dance-motion-synthesis/dataset">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-fymr" rowspan="19">Speech-Conditioned Motion Datasets</td>
+    <td class="tg-0pky">CHDTF</td>
+    <td class="tg-c3ow">2025</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow"><a href="https://arxiv.org/abs/2503.19001"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://kangweiiliu.github.io/DisentTalk/"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25">
+</a>
+  </td>
+  </tr>
+<tr>
+    <td class="tg-0pky">Hallo3</td>
+    <td class="tg-c3ow">2024</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2412.00733">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/fudan-generative-vision/hallo3">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">MultiTalk</td>
+    <td class="tg-c3ow">2024</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2406.14272">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://multi-talk.github.io/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">ZEGGS</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1111/cgf.14734">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/ubisoft/ubisoft-laforge-ZeroEGGS">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">BEAT</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136670605.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://pantomatrix.github.io/BEAT/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">CelebV-HQ</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2207.12393">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://celebv-hq.github.io/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">VFHQ</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2205.03409">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://liangbinxie.github.io/projects/vfhq/">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">ViCo</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1145/3696409.3700260">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/haoosz/ViCo">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-0pky">TalkHead-1KH</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow"><a href="https://arxiv.org/abs/2011.15126"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://github.com/tcwang0509/TalkingHead-1KH"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25">
+</td>
+  </tr>
+<tr>
+    <td class="tg-0pky">MEAD</td>
+    <td class="tg-c3ow">2020</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1007/978-3-030-58589-1_42">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://wywu.github.io/projects/MEAD/MEAD.html">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+  <td class="tg-0pky">PATS</td>
+  <td class="tg-c3ow">2020</td>
+  <td class="tg-c3ow">Body + Face</td>
+
+  <!-- Paper links (2 icons) -->
+  <td class="tg-c3ow">
+    <a href="https://doi.org/10.18653/v1/2020.findings-emnlp.170" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 1" width="25" height="25">
+    </a>
+    <a href="https://doi.org/10.48550/arXiv.2007.12553" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 2" width="25" height="25">
+    </a>
+  </td>
+
+  <!-- Dataset links (2 icons) -->
+  <td class="tg-0lax">
+    <a href="https://chahuja.com/pats/" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 1" width="25" height="25">
+    </a>
+    <a href="https://chahuja.com/mix-stage/" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 2" width="25" height="25">
+    </a>
+  </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Trinity</td>
+    <td class="tg-c3ow">2020</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="http://trinityspeechgesture.scss.tcd.ie">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="http://trinityspeechgesture.scss.tcd.ie">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Speech2Gesture</td>
+    <td class="tg-c3ow">2019</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="http://shiry.ttic.edu/speech2gesture/">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">CelebV</td>
+    <td class="tg-c3ow">2018</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2207.12393">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/CelebV-HQ/CelebV-HQ">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">VoxCeleb2</td>
+    <td class="tg-c3ow">2018</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.1806.05622">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="http://www.robots.ox.ac.uk/~vgg/data/voxceleb2/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">VoxCeleb1</td>
+    <td class="tg-c3ow">2017</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.1706.08612">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="http://www.robots.ox.ac.uk/~vgg/data/voxceleb/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">LRS</td>
+    <td class="tg-c3ow">2017</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.1809.00496">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">MV-LRS</td>
+    <td class="tg-c3ow">2017</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/1611.05358">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/DungLe13/lips-reading">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">LRW</td>
+    <td class="tg-c3ow">2016</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1109/TAFFC.2021.3062406">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+  <td class="tg-fymr" rowspan="9">Scene-Conditioned Motion Datasets</td>
+  <td class="tg-0pky">Habitat</td>
+  <td class="tg-c3ow">2023</td>
+  <td class="tg-c3ow">Body</td>
+
+  <!-- Paper links (3 papers with separate icons) -->
+  <td class="tg-c3ow">
+    <a href="https://doi.org/10.48550/arXiv.2310.13724" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 1" width="25" height="25">
+    </a>
+    <a href="https://doi.org/10.48550/arXiv.2106.14405" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 2" width="25" height="25">
+    </a>
+    <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Savva_Habitat_A_Platform_for_Embodied_AI_Research_ICCV_2019_paper.pdf" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 3" width="25" height="25">
+    </a>
+  </td>
+
+  <!-- Dataset links (3 datasets with dataset icons) -->
+  <td class="tg-0lax">
+    <a href="https://aihabitat.org/habitat3/" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 1" width="25" height="25">
+    </a>
+    <a href="" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 2" width="25" height="25">
+    </a>
+    <a href="" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 3" width="25" height="25">
+    </a>
+  </td>
+</tr>
+    <td class="tg-0pky">Circle</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Araujo_CIRCLE_Capture_in_Rich_Contextual_Environments_CVPR_2023_paper.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://stanford-tml.github.io/circle_dataset/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">HUMANISE</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2210.09729">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://silvester.wang/HUMANISE/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">COUCH</td>
+    <td class="tg-c3ow">2022</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2205.00541">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://virtualhumans.mpi-inf.mpg.de/couch/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">SAMP</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1109/ICCV48922.2021.01118">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://samp.is.tue.mpg.de/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-0pky">GTA-IM</td>
+    <td class="tg-c3ow">2020</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2006.06625">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/ZheC/GTA-IM-Dataset">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-0pky">PROX</td>
+    <td class="tg-c3ow">2019</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/1908.06963">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://prox.is.tue.mpg.de">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+<td class="tg-0pky">JTA</td>
+    <td class="tg-c3ow">2018</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/1803.08319">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://aimagelab.ing.unimore.it/imagelab/page.asp?IdPage=25">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PiGraph</td>
+    <td class="tg-c3ow">2016</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1145/2897824.2925867">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="http://graphics.stanford.edu/projects/pigraphs/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="8">Action-Conditioned Motion Datasets</td>
+    <td class="tg-0pky">Motion-X</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-baqh"><a href="https://arxiv.org/abs/2307.00818"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://github.com/IDEA-Research/Motion-X"><img src="resources/dataset.png"
+     alt="Dataset Icon"  
+     width="25" height="25">
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">BABEL</td>
+    <td class="tg-baqh">2021</td>
+    <td class="tg-baqh">Body</td>
+    <td class="tg-baqh">
+        <a href="https://openaccess.thecvf.com/content/CVPR2021/html/Punnakkal_BABEL_Bodies_Action_and_Behavior_With_English_Labels_CVPR_2021_paper.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://babel.is.tue.mpg.de/data.html">
+            <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">EMOGAIT</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0031320321000558">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <img src="resources/dataset.png" alt="Dataset Icon" width="25" height="25">
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">HuMMan</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136670549.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/PIC4SeR/MPOSE2021_Dataset">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">HumanAct12</td>
+    <td class="tg-c3ow">2020</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2007.15240">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/EricGuo5513/action-to-motion">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+<tr>
+  <td class="tg-0pky">NTU-RGB+D</td>
+  <td class="tg-c3ow">2016</td>
+  <td class="tg-c3ow">Body</td>
+
+  <!-- Paper links (2 papers with separate icons) -->
+  <td class="tg-c3ow">
+    <a href="https://doi.org/10.48550/arXiv.1604.02808" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 1" width="25" height="25">
+    </a>
+    <a href="https://doi.org/10.1109/TPAMI.2019.2916873" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper 2" width="25" height="25">
+    </a>
+  </td>
+
+  <!-- Dataset links (2 datasets with dataset icons) -->
+  <td class="tg-0lax">
+    <a href="https://github.com/shahroudy/NTURGB-D" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 1" width="25" height="25">
+    </a>
+    <a href="https://github.com/shahroudy/NTURGB-D" target="_blank">
+      <img src="resources/dataset.png" alt="Dataset 2" width="25" height="25">
+    </a>
+  </td>
+</tr>
+    <td class="tg-0pky">Penn Action</td>
+    <td class="tg-c3ow">2013</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow"><a href=""><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25">
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">UCF101</td>
+    <td class="tg-c3ow">2012</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.1212.0402">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://www.kaggle.com/datasets/pevogam/ucf101">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="6">General Motion Capture Datasets</td>
+    <td class="tg-0pky">BioCV</td>
+    <td class="tg-c3ow">2024</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1038/s41597-024-04077-3">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://researchdata.bath.ac.uk/1258/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Motion-X</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-baqh"><a href="https://arxiv.org/abs/2307.00818"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0lax"><a href="https://github.com/IDEA-Research/Motion-X"><img src="resources/dataset.png"
+     alt="Dataset Icon" 
+     width="25" height="25">
+</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">HuMMan</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136670549.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/PIC4SeR/MPOSE2021_Dataset">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MoVi</td>
+    <td class="tg-c3ow">2021</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1371/journal.pone.0253157">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://www.biomotionlab.ca/movi/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">AMASS</td>
+    <td class="tg-c3ow">2019</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Mahmood_AMASS_Archive_of_Motion_Capture_As_Surface_Shapes_ICCV_2019_paper.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://amass.is.tue.mpg.de/index.html">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Human3.6M</td>
+    <td class="tg-c3ow">2014</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="http://vision.imar.ro/human3.6m/pami-h36m.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="http://vision.imar.ro/human3.6m/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="7">Interaction Datasets</td>
+    <td class="tg-0pky">NoXi-J</td>
+    <td class="tg-c3ow">2024</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2409.13726">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://multimediate-challenge.org/datasets/Dataset_NoXiJ/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">InterHuman</td>
+    <td class="tg-c3ow">2024</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1007/s11263-024-02042-6">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/tr3e/InterGen">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Audio2Photoreal</td>
+    <td class="tg-c3ow">2024</td>
+    <td class="tg-c3ow">Body + Face</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2401.01885">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://github.com/facebookresearch/audio2photoreal">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">RealTalk</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2502.13270">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://huggingface.co/datasets/scottgeng00/realtalk">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">L2L</td>
+    <td class="tg-c3ow">2023</td>
+    <td class="tg-c3ow">Face</td>
+    <td class="tg-c3ow">
+        <a href="https://www.l2l-challenge.org">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://www.l2l-challenge.org">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">GRAB</td>
+    <td class="tg-c3ow">2020</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2008.11200">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://grab.is.tue.mpg.de">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">NoXi</td>
+    <td class="tg-c3ow">2017</td>
+    <td class="tg-c3ow">Body</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1145/3136755.3136780">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0lax">
+        <a href="https://multimediate-challenge.org/datasets/Dataset_NoXi/">
+            <img src="resources/dataset.png" alt="Dataset Link" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+</tbody></table>
+<br>
+</center>
+	<hr>
+
+	<center><h1>Generative Techniques</h1></center>
+
+	<center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:900px" src="./resources/roadmap.jpg"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>Roadmap of Motion Generation Techniques.</i>
+					</center>
+  	              </td>
+			</tr>
+		</table>
+	</center>
+	<br>
+<hr>
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<center>
+	<span style="font-size:24px"><center><b> Facial Animation Methods </b> </center></span>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-fymr">Model</th>
+    <th class="tg-fymr">Approach</th>
+    <th class="tg-fymr">Year</th>
+    <th class="tg-7btt">Paper</th>
+    <th class="tg-fymr">GitHub</th>
+  </tr></thead>
+  
+
+
+<tbody>
+  <tr>
+    <td class="tg-fymr" rowspan="8">Diffusion</td>
+    <td class="tg-0pky">AV-Flow</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2502.13133">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://aggelinacha.github.io/AV-Flow/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">AniPortrait</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2403.17694">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Zejun-Yang/AniPortrait" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">DAWN</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2008.05402">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Hanbo-Cheng/DAWN-pytorch" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">EDTalk</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1007/978-3-031-72658-3_23">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/tanshuai0219/EDTalk" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-0pky">EMO: Emote Portrait Alive</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href=""><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky"><a href="https://github.com" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+       alt="GitHub Logo" 
+       width="25" height="25">
+</a></td>
+  </tr>
+<tr>
+    <td class="tg-0pky">MEMO</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2412.04448">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/memoavatar/memo" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Real3D-Portrait</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2401.08503">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/yerfor/Real3DPortrait" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">EAT-Face</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1109/FG59268.2024.10581957">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-fymr" rowspan="6">GAN</td>
+    <td class="tg-0pky">ToonifyGB</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2505.10072">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/RuiyangJu/ToonifyGB" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+  </tr>
+<tr>
+    <td class="tg-0pky">G3FA</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2408.13049">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/dfki-av/G3FA" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Style2Talker</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1609/aaai.v38i5.28313">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/tanshuai0219/style2talker" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">VideoReTalking</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2211.14758">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/OpenTalker/video-retalking" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">EAMM</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1145/3528233.3530745">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/jixinya/EAMM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+
+<tr>
+    <td class="tg-0pky">Talking Face Generation</td>
+    <td class="tg-0pky">2019</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1145/3571746">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25">
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Hangz-nju-cuhk/Talking-Face-Generation-DAVS" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-fymr" rowspan="14">Neural Network and VAE-based</td>
+    <td class="tg-0pky">EmoHuman</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1145/3731715.37333225">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/HumanAIGC/EMO" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+<tr>
+    <td class="tg-0pky">CustomListener</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2403.00274">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://customlistener.github.io/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Talk3D</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2403.20153">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/cvlab-kaist/Talk3D" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">FlowVQTalker</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.1109/CVPR52733.2024.02486">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/tanshuai0219/FlowVQTalker" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">FreeAvatar</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2409.13180">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/FuxiVirtualHuman/free_avatar" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Can Language Models Learn to Listen?</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2308.10897">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/sanjayss34/lm-listener" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">MODA</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2307.10008">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/taichuai/MODA" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">SadTalker</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Zhang_SadTalker_Learning_Realistic_3D_Motion_Coefficients_for_Stylized_Audio-Driven_Single_CVPR_2023_paper.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/tatlantis/sadtalker" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">VividTalk</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2312.01841">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/HumanAIGC/VividTalk" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Learning2Listen</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Ng_Learning_To_Listen_Modeling_Non-Deterministic_Dyadic_Facial_Motion_CVPR_2022_paper.pdf#page=1.00&gsr=0">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/evonneng/learning2listen" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+  <tr>
+    <td class="tg-0pky">RLHG</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2112.13548">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/dingmyu/rlhg" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25">
+        </a> -->
+    </td>
+  </tr>
+<tr>
+    <td class="tg-0pky">ELP</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2310.00068">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <!-- <a href="" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">Trans-VAE</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow">
+        <a href="https://doi.org/10.48550/arXiv.2306.06583">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/reactmultimodalchallenge/baseline_react2023" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+<tr>
+    <td class="tg-0pky">EVP</td>
+    <td class="tg-0pky">2021</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Ji_Audio-Driven_Emotional_Video_Portraits_CVPR_2021_paper.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/jixinya/EVP/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+</tbody></table>
+
+<br>
+<hr>
+
+<span style="font-size:24px"><center><b> Body Animation Methods </b> </center></span>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-fymr">Model</th>
+    <th class="tg-fymr">Approach</th>
+    <th class="tg-fymr">Year</th>
+    <th class="tg-7btt">Paper</th>
+    <th class="tg-fymr">GitHub</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-fymr" rowspan="11">Diffusion</td>
+    <td class="tg-0pky">Goal-Driven Motion Synthesis</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://openreview.net/forum?id=DwFbJwiuyI">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/YvanYin/GoalFlow" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Light-T2M</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2412.11193">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/qinghuannn/light-t2m" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">AMUSE</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Chhatre_Emotional_Speech-driven_3D_Body_Animation_via_Disentangled_Latent_Diffusion_CVPR_2024_paper.pdf">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/kiranchhatre/amuse" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SkeletonDiffusion</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Curreli_Nonisotropic_Gaussian_Diffusion_for_Realistic_3D_Human_Motion_Prediction_CVPR_2025_paper.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Ceveloper/SkeletonDiffusion" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+</tr>
+  </tr>
+  <tr>
+     <td class="tg-0pky">UniMuMo</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow">
+        <a href="https://hanyangclarence.github.io/unimumo_demo/">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/hanyangclarence/UniMuMo" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">EMDM</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow">
+        <a href="https://arxiv.org/abs/2312.02256">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="Paper Link" width="25" height="25" >
+        </a>
+    </td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Frank-ZY-Dou/EMDM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">FlowMDM</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Barquero_Seamless_Human_Motion_Composition_with_Blended_Positional_Encodings_CVPR_2024_paper.pdf"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a>    <td class="tg-0pky">
+        <a href="https://github.com/BarqueroGerman/FlowMDM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MotionDiffuse</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.1109/TPAMI.2024.3355414"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Frank-ZY-Dou/EMDM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MoFusion</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href=""><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/mingyuan-zhang/MotionDiffuse" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PhysDiff</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://nvlabs.github.io/PhysDiff/"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/Frank-ZY-Dou/EMDM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">GestureDiffuCLIP</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://pku-mocca.github.io/GestureDiffuCLIP-Page/"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/Frank-ZY-Dou/EMDM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="5">GAN</td>
+    <td class="tg-0pky">Conditional GAN for Enhancing Diffusion Models</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow"><a href="https://arxiv.org/abs/2410.20359"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/Frank-ZY-Dou/EMDM" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MoDI</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.48550/arXiv.2206.08010"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/sigal-raab/MoDi" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">BelFusion</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://barquerogerman.github.io/BeLFusion/"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/BarqueroGerman/BeLFusion" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">ActFormer</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Xu_ActFormer_A_GAN-based_Transformer_towards_General_Action-Conditioned_3D_Human_Motion_ICCV_2023_paper.pdf"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Szy-Young/actformer" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">BiHMP-GAN</td>
+    <td class="tg-0pky">2019</td>
+    <td class="tg-c3ow"><a href="https://val.cds.iisc.ac.in/papers/AAAI_2019_BiHMP_GAN.pdf"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/Szy-Young/actformer" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="12">Neural Network and VAE-based</td>
+    <td class="tg-0pky">Audio2Moves</td>
+    <td class="tg-0pky">2025</td>
+    <td class="tg-c3ow"><a href="https://rdcu.be/eIw8V"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <!-- <a href="https://github.com/Szy-Young/actformer" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MotionGPT</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://openaccess.thecvf.com/content/WACV2024/papers/Ribeiro-Gomes_MotionGPT_Human_Motion_Synthesis_With_Improved_Diversity_and_Realism_via_WACV_2024_paper.pdf"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/OpenMotionLab/MotionGPT3" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MoMask</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.1109/CVPR52733.2024.00186"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/EricGuo5513/momask-codes" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SATO</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.1145/3664647.3681034"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/sato-team/Stable-Text-to-Motion-Framework" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">M3GPT</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.48550/arXiv.2405.16273"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/luomingshuang/M3GPT" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PhysMoP</td>
+    <td class="tg-0pky">2024</td>
+    <td class="tg-c3ow"><a href="https://openaccess.thecvf.com/content/WACV2024/papers/Zhang_Incorporating_Physics_Principles_for_Precise_Human_Motion_Prediction_WACV_2024_paper.pdf"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/zhangy76/PhysMoP" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Fg-T2M</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.1109/ICCV51070.2023.02014"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <!-- <a href="" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a> -->
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">T2M-GPT</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.48550/arXiv.2301.06052"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Mael-zys/T2M-GPT" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MotionBERT</td>
+    <td class="tg-0pky">2023</td>
+    <td class="tg-c3ow"><a href="https://doi.org/10.48550/arXiv.2210.06551"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/Walter0807/MotionBERT/tree/main" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">MotionClip</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow"><a href="https://guytevet.github.io/motionclip-page/"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/GuyTevet/MotionCLIP" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PoseGPT</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow"><a href="https://yfeng95.github.io/ChatPose/"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/yfeng95/PoseGPT" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PoseScript</td>
+    <td class="tg-0pky">2022</td>
+    <td class="tg-c3ow"><a href="https://europe.naverlabs.com/research/publications/posescript-3d-human-poses-from-natural-language/"><img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" width="25" height="25"></a></td>
+    <td class="tg-0pky">
+        <a href="https://github.com/naver/posescript" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" width="25" height="25" >
+        </a>
+    </td>
+  </tr>
+</tbody></table>
+</center>
+	<table align=center width=420px>
+		<center>
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</center>
+	</table>
+
+	<br>
+	<hr>
+	<table align=center width=800px>
+		<center><h1>Paper</h1></center>
+		<tr>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><span style="font-size:14pt">L. R. Sookha, N. Pakhale, M. A. Ganaie, A. Dhall<br>
+				<b>A Survey of Body and Face Motion Animation: Datasets,
+Metrics and Generative Techniques</b><br>
+				
+				(Submitted to <a href="">ACM Computing Surveys</a>)<br>
+				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+				<span style="font-size:4pt"><a href=""><br></a>
+				</span>
+			</td>
+		</tr>
+	</table>
+	<br>
+
+	<table align=center width=600px>
+		<tr>
+			<td><span style="font-size:14pt"><center>
+				<a href="./resources/bibtex.txt">[Bibtex]</a>
+			</center></td>
+		</tr>
+	</table>
+
+	<hr>
+	<br>
+
+	<table align=center width=900px>
+		<tr>
+			<td width=400px>
+				<left>
+					<center><h1>Acknowledgements</h1></center>
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+				</left>
+			</td>
+		</tr>
+	</table>
+
+<br>
+</body>
+</html>
+
