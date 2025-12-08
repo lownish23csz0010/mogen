@@ -137,7 +137,7 @@
 	<br>
 	<center>
 		<span style="font-size:36px; font-weight:bold;">
-			A Survey of Body and Face Motion Animation: Datasets, Metrics and Generative Techniques
+			A Survey of Body and Face Motion: Datasets, Performance Evaluation Metrics and Generative Techniques
 		</span>
 		
 		<!-- Author List -->
@@ -207,7 +207,7 @@
 			<tr>
 				<td width=400px>
   					<center>
-  	                	<span style="font-size:14px"><i>Overview of Motion Generation.</i>
+  	                	<span style="font-size:14px"><i>Overview of Generic Motion Generation Pipeline of existing SOTAs. Given the input from the respective modalities, the methods generate desired body or face motion using appropriate representation techniques.</i>
 					</center>
   	              </td>
 			</tr>
@@ -220,10 +220,102 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Human motion generation in dyadic conversations is vital for engaging Human-Computer Interaction. Advances in generative modeling and multi-modal learning have enabled reaction generation from signals such as speech, conversational context and visual cues. However, generating expressive and coherent facial and bodily dynamics remains challenging due to the interplay of verbal and non-verbal cues and individual personality traits. This survey reviews body and facial motion generation, covering core concepts, representations, generative approaches, datasets and evaluation metrics. We highlight future directions to enhance the realism, coherence and expressiveness of avatars in dyadic settings. To our knowledge, this work is among the first to cover both body and facial animation.
+				Body and face motion play an integral role in communication. They convey crucial information on the participants. Advances in generative modeling and multi-modal learning have enabled motion generation from signals such as speech, conversational context and visual cues. However, generating expressive and coherent face and body dynamics remains challenging due to the complex interplay of verbal / non-verbal cues and individual personality traits. This survey reviews body and face motion generation, covering core concepts, representations techniques, generative approaches, datasets and evaluation metrics. We highlight future directions to enhance the realism, coherence and expressiveness of avatars in dyadic settings. <b>To the best of our knowledge, this work is the first comprehensive review to cover both body and face motion.</b>
 		</tr>
 	</table>
 	<br>
+
+    <hr>
+    <center><h1>Representation Techniques</h1></center>
+
+    <center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img class="round" style="width:800px" src="./resources/representation.png"/>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i><b>(Top)</b> Given the body image, the body pose and geometry are reconstructed using body representation techniques. Source: Pavlakos et al. (2019) <br><b>(Bottom)</b> Given face images, the face is parameterized and reconstructed using 3DMM frameworks, effectively capturing the pose and expression. Source: Restsinas et al. (2024)</i>
+					</center>
+  	              </td>
+			</tr>
+		</table>
+	</center>
+
+    <hr>
+    <center><h1>Motion Visualizations</h1></center>
+    <center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img src="resources/004742_pred.gif" alt="" width="500">
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>Body motion generated using SMPL</i>
+					</center>
+  	              </td>
+			</tr>
+		</table>
+	</center>
+
+    <center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<img src="resources/tracking_v3.gif" alt="" width="600">
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>Face reconstruction using FaceVerse</i>
+					</center>
+  	              </td>
+			</tr>
+		</table>
+	</center>
+
+    <center>
+		<table align=center width=850px>
+			<tr>
+				<td width=260px>
+					<center>
+						<video width="320" height="240" controls>
+  <source src="resources/ed_talk_examples.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+					</center>
+				</td>
+			</tr>
+		</table>
+		<table align=center width=850px>
+			<tr>
+				<td width=400px>
+  					<center>
+  	                	<span style="font-size:14px"><i>Talking Face Generating using EdTalk (Diffusion-based model)</i>
+					</center>
+  	              </td>
+			</tr>
+		</table>
+	</center>
 
 	<hr>
 	<center><h1>Datasets</h1></center>
@@ -1993,9 +2085,9 @@
 			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
 			<td><span style="font-size:14pt">L. R. Sookha, N. Pakhale, M. Ganaie, A. Dhall<br>
 				<b>A Survey of Body and Face Motion Animation: Datasets,
-Metrics and Generative Techniques</b><br>
+Metrics and Generative Techniques</b>
 				
-				(Submitted to <a href="">ACM Computing Surveys</a>)<br>
+				<!-- <br>(Submitted to <a href="">ACM Computing Surveys</a>)<br> -->
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
 				</span>
