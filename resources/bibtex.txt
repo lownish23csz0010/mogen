@@ -1,6 +1,9 @@
-@inproceedings{author20XXtitle,
-  title={Please cite me},
-  author={Author, First and Author, Second and Author, Third},
-  booktitle={Conference},
-  year={20XX}
+@misc{sookha2025surveybodyfacemotion,
+      title={A Survey of Body and Face Motion: Datasets, Performance Evaluation Metrics and Generative Techniques}, 
+      author={Lownish Rai Sookha and Nikhil Pakhale and Mudasir Ganaie and Abhinav Dhall},
+      year={2025},
+      eprint={2512.09005},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.09005}, 
 }
